@@ -69,7 +69,7 @@ class MessageData {
 
 
 	public static function getInboxByUserId($user){
-		$sql = "select * from ".self::$tablename." where user_from=$user or user_to=$user group by code";
+		$sql = "select * from ".self::$tablename." where user_from=$user or user_to=$user";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new MessageData());
 	}

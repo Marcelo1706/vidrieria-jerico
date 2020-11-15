@@ -282,15 +282,16 @@ public function add_with_client(){
 	}
 
 
-		public static function getGroupByDateOp($start,$end,$op){
-  $sql = "select id,sum(total) as tot,discount,sum(total-discount) as t,count(*) as c from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and operation_type_id=$op";
+	public static function getGroupByDateOp($start,$end,$op){
+  		$sql = "select id,sum(total) as tot,discount,sum(total-discount) as t,count(*) as c from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and operation_type_id=$op group by id";
 		$query = Executor::doit($sql);
+		// var_dump($query);
 		return Model::many($query[0],new SellData());
 	}
 
 
 	public static function getAllByDateBCOp($clientid,$start,$end,$op){
- 		$sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and person_id=$clientid  and operation_type_id=$op and is_draft=0 and p_id=1 and d_id=1 order by created_at desc";
+ 		$sql = "select * from ".self::$tablename." where created_at >= \"$start\" and created_at <= \"$end\" and person_id=$clientid  and operation_type_id=$op and is_draft=0 and p_id=1 and d_id=1 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new SellData());
 

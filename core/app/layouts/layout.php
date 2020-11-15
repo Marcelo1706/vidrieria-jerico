@@ -245,8 +245,7 @@ $msgs = MessageData::getUnreadedByUserId($_SESSION["user_id"]);
                 <li><a href="./?view=users">Usuarios</a></li>
                 <li><a href="./?view=settings">Configuracion</a></li>
                 <li><a href="./?view=import">Importar Datos</a></li>
-
-
+                <li><a href="./?view=exportar">Exportar Datos</a></li>
               </ul>
             </li>
           <?php endif; ?>

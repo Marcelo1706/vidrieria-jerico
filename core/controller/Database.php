@@ -2,8 +2,9 @@
 class Database {
 	public static $db;
 	public static $con;
-	function Database(){
-		$this->user="root";$this->pass="mysql";$this->host="localhost";$this->ddbb="invensoft";
+	function __construct()
+	{
+		$this->user="root";$this->pass="mysql";$this->host="localhost";$this->ddbb="imacasa";
 	}
 
 	function connect(){

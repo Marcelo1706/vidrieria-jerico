@@ -1,8 +1,6 @@
 /*
 * Modelo de base de datos del sistema de IMACASA
  v5.1
-* @author spokelopez
-* @url https://spokelopez.github.io/
 */
 
 create table user(

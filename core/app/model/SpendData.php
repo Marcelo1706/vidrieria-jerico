@@ -102,7 +102,7 @@ class SpendData {
 	}
 
 		public static function getGroupByDateOp($start,$end){
- 		$sql = "select *,sum(price) as t from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\"";
+ 		$sql = "select *,sum(price) as t from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" group by id";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new SellData());
 
