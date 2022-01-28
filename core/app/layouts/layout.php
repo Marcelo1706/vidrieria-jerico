@@ -329,7 +329,7 @@ $msgs = MessageData::getUnreadedByUserId($_SESSION["user_id"]);
             <div class="col-xs-12">
               <button type="submit" class="btn btn-primary btn-block btn-flat"><span class="glyphicon glyphicon-send"></span> Acceder al sistema</button>
 
-              <a href="./?view=clientaccess" class="btn btn-default btn-block btn-flat"><i class="fa fa-arrow-right"></i> Acceso como cliente  </a>
+              
             </div><!-- /.col -->
           </div>
         </form>
