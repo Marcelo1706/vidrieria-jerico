@@ -63,8 +63,11 @@ $iva_val = ConfigurationData::getByPreffix("imp-val")->val;
 			<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Buscar</button>
 			</div>
       <div class="col-md-1">
-      <button type="button" id="readqr" class="btn btn-default"><i class="fa fa-qrcode"></i> Buscar por QR</button>
-      </div>
+    
+       
+    <!--- <button type="button" id="readqr" class="btn btn-default"><i class="fa fa-qrcode"></i> Buscar por QR</button> -->
+    </div>
+ 
 
 		</div>
 		</form>
