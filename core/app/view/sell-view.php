@@ -55,7 +55,7 @@ $iva_val = ConfigurationData::getByPreffix("imp-val")->val;
 
 			<div class="col-md-3">
 				<input type="hidden" name="view" value="sell">
-				<input type="text" id="product_code" name="product_code" class="form-control" placeholder="Codigo de Barra">
+				<input type="text" id="product_code" name="product_code" class="form-control" placeholder="Codigo de producto">
 			</div>
 
 
