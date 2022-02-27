@@ -12,9 +12,9 @@ class Core {
 	public static $email_user ="softreligion@gmail.com";
 	public static $email_password ="l00lapal00za";
 
-	public static $pdf_footer = "Generado por el Sistema VIDRERÍA JERICÓ
+	public static $pdf_footer = "Generado por el Sistema VIDRIERÍA JERICÓ
 ";
-	public static $email_footer = "Correo generado Automaticamente por el Sistema VIDRERÍA JERICÓ
+	public static $email_footer = "Correo generado Automaticamente por el Sistema VIDRIERÍA JERICÓ
 ";
 
 	public static $pdf_table_fillcolor = "[100, 100, 100]";

@@ -1,12 +1,10 @@
 <section class="content">
 <div class="btn-group pull-right">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    <i class="fa fa-download"></i> Descargar <span class="caret"></span>
+    <i class="fa fa-download"></i> Imprimir <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/onesell-word.php?id=<?php echo $_GET["id"];?>">Word 2007 (.docx)</a></li>
-    <li><a onclick="thePDF()" id="makepdf" class=""><i class="fa fa-download"></i> Descargar PDF</a>
-    <li><a onclick="create_pdf()" id="makepdf2" class=""><i class="fa fa-download"></i> Facturita</a>
+    <li><a onclick="create_pdf()" id="makepdf2" class=""><i class="fa fa-download"></i>Factura</a>
   </ul>
 </div>
 <h1>Resumen de Venta</h1>
@@ -338,7 +336,7 @@ function create_pdf(){
 
   ?>
   // Final, guardar el documento
-  doc.save('venta-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
+  doc.save('venta-<?php echo $sell->created_at; ?>.pdf');
 }
 </script>
 

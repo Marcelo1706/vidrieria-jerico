@@ -1,5 +1,5 @@
 <section class="content-header">
-<h1>VIDRERÍA JERICÓ
+<h1>VIDRIERÍA JERICÓ
 </h1>
 </section>
 <section class="content">

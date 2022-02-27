@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>VIDRERÍA JERICÓ
+    <title>VIDRIERÍA JERICÓ
  | Panel de Administracion</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
@@ -49,9 +49,9 @@
         <!-- Logo -->
         <a href="./" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini">VIDRERÍA JERICÓ</span>
+          <span class="logo-mini">VIDRIERÍA JERICÓ</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">VIDRERÍA JERICÓ</span>
+          <span class="logo-lg">VIDRIERÍA JERICÓ</span>
         </a>
 
         <!-- Header Navbar -->
@@ -311,7 +311,7 @@ $msgs = MessageData::getUnreadedByUserId($_SESSION["user_id"]);
         <?php else:?>
 <div class="login-box">
       <div class="login-logo">
-        <a href="./">VIDRERÍA JERICÓ <sup>Ahuachapán</sup></a>
+        <a href="./">VIDRIERÍA JERICÓ <sup>Ahuachapán</sup></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
       <center><h4>Usuario</h4></center>

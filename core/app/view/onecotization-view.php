@@ -4,7 +4,7 @@
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/cotization-word.php?id=<?php echo $_GET["id"];?>">Word 2007 (.docx)</a></li>
+  <li><a onclick="create_pdf()" id="makepdf2" class=""><i class="fa fa-download"></i>Cotización</a>
   </ul>
 </div>
 <h1>Cotizacion</h1>
@@ -91,3 +91,65 @@ $user = $sell->getUser();
 	501 Internal Error
 <?php endif; ?>
 </section>
+<!-- Nueva función porque no pude eliminar la otra xD -->
+<script>
+function create_pdf(){ 
+  var doc = new jsPDF('p', 'mm', [279, 216]);
+  doc.setFontSize(12);
+  <?php
+  $header = "
+    doc.text('".$sell->created_at."', 150, 263);
+  ";
+  if($sell->person_id!=""){
+    $person = $sell->getPerson();
+    $header .= "
+    doc.text('".$person->name." ".$person->lastname."', 40, 73);
+    ";
+  }
+  $page_break = "doc.addPage();";
+
+  # Crear un bucle que cada 13 productos me imprima $header
+  $i = 0;
+  $total = 0;
+  $page_total = 0;
+  $y_axis = 94;
+  $j = 0;
+  foreach($operations as $operation){
+    $product = $operation->getProduct();
+    
+    if($i == 0){
+      echo $header;
+    }
+    if($i % 22 == 0 && $i != 0 || $i == count($operations)-1){
+      if($i == count($operations)-1){
+        $page_total += $operation->q*$operation->price_out;
+      }
+      $iva = $page_total * 0.13;
+      echo "doc.text('Total:', 140, 253);";
+      echo "doc.text('$".number_format($page_total,2,".",",")."', 175, 253);";
+      if($i % 22 == 0 && $i != count($operations)-1){
+        echo $page_break;
+        echo $header;
+        $page_total = 0;
+        $y_axis = 91;
+        $j = 0;
+      }
+    }
+
+    $page_total += $operation->q*$operation->price_out;
+    $row_pos = $y_axis+($j*7.2);
+    echo "doc.text('".$operation->q."', 20, $row_pos);";
+    echo "doc.text('".$product->name."', 50, $row_pos);";
+    echo "doc.text('$".number_format($operation->price_out,2,".",",")."', 140, $row_pos);";
+    echo "doc.text('$".number_format($operation->q*$operation->price_out,2,".",",")."', 175, $row_pos);";
+    
+
+    $i++;
+    $j++;
+  }
+
+  ?>
+  // Final, guardar el documento
+  doc.save('cotizacion-<?php echo $sell->created_at; ?>.pdf');
+}
+</script>
