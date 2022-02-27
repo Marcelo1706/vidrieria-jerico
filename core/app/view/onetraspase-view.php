@@ -298,7 +298,7 @@ doc.autoTable(columns2, rows4, {
 //doc.addImage(img, 'JPEG', 40, 10, 610, 100, 'monkey'); // Cache the image using the alias 'monkey'
 doc.setFontSize(20);
 doc.setFontSize(12);
-doc.text("Generado por el Sistema IMACASA
+doc.text("Generado por el Sistema VIDRERÍA JERICÓ
 ", 40, doc.autoTableEndPosY()+25);
 doc.save('sell-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
 //doc.output("datauri");

@@ -49,7 +49,7 @@
         <!-- Logo -->
         <a href="./" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini">IMACASA</span>
+          <span class="logo-mini">VIDRERÍA JERICÓ</span>
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg">VIDRERÍA JERICÓ</span>
         </a>
@@ -285,7 +285,7 @@ $msgs = MessageData::getUnreadedByUserId($_SESSION["user_id"]);
         <?php if(isset($_GET["view"]) && $_GET["view"]=="clientaccess"):?>
 <div class="login-box">
       <div class="login-logo">
-        <a href="./">IMACASA</a>
+        <a href="./">VIDRIERÍA JERICÓ</a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
       <center><h4>Cliente</h4></center>

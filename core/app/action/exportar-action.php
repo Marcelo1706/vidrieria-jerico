@@ -21,7 +21,7 @@ $dumpSettings = array(
     'hex-blob' => true
 );
 
-$dump = new Mysqldump('mysql:host=localhost;dbname=imacasa', 'root', 'mysql',$dumpSettings);
+$dump = new Mysqldump('mysql:host=localhost;dbname=vidrieria', 'root', 'mysql',$dumpSettings);
 $dump->start("backup{$fecha}.sql");
 
 header('Content-Description: File Transfer');

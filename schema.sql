@@ -1,5 +1,5 @@
 /*
-* Modelo de base de datos del sistema de IMACASA
+* Modelo de base de datos del sistema de VIDRERÍA JERICÓ
  v5.1
 */
 

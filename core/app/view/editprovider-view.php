@@ -6,9 +6,9 @@
 		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=updateprovider" role="form">
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">RFC/RUT*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">DUI*</label>
     <div class="col-md-6">
-      <input type="text" name="no" value="<?php echo $user->no;?>" class="form-control" id="no" placeholder="RFC/RUT">
+      <input type="text" name="no" value="<?php echo $user->no;?>" class="form-control" id="no" placeholder="DUI">
     </div>
   </div>
 
