@@ -5,7 +5,8 @@
   </button>
   <ul class="dropdown-menu" role="menu">
     <li><a href="report/onesell-word.php?id=<?php echo $_GET["id"];?>">Word 2007 (.docx)</a></li>
-<li><a onclick="thePDF()" id="makepdf" class=""><i class="fa fa-download"></i> Descargar PDF</a>
+    <li><a onclick="thePDF()" id="makepdf" class=""><i class="fa fa-download"></i> Descargar PDF</a>
+    <li><a onclick="create_pdf()" id="makepdf2" class=""><i class="fa fa-download"></i> Facturita</a>
   </ul>
 </div>
 <h1>Resumen de Venta</h1>
@@ -259,7 +260,7 @@ doc.autoTable(columns2, rows2, {
 doc.setFontSize(20);
 doc.setFontSize(12);
 doc.text("Generado por el Sistema de inventario", 40, doc.autoTableEndPosY()+25);
-doc.save('sell-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
+doc.save('venta-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
 //doc.output("datauri");
 
         }
@@ -269,6 +270,76 @@ doc.save('sell-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
   $(document).ready(function(){
   //  $("#makepdf").trigger("click");
   });
+</script>
+
+<!-- Nueva función porque no pude eliminar la otra xD -->
+<script>
+function create_pdf(){ 
+  var doc = new jsPDF('p', 'mm', [215, 140]);
+  doc.setFontSize(8);
+  <?php
+  $header = "
+    doc.text('".$sell->created_at."', 80, 55);
+  ";
+  if($sell->person_id!=""){
+    $person = $sell->getPerson();
+    $header .= "
+    doc.text('".$person->name." ".$person->lastname."', 45, 60);
+    doc.text('".$person->no."', 45, 66);
+    doc.text('".$person->address1."', 30, 72);
+    ";
+  }
+  $header .= "
+    doc.text('".$user->name." ".$user->lastname."', 45, 77);
+  ";
+  $page_break = "doc.addPage();";
+
+  # Crear un bucle que cada 13 productos me imprima $header
+  $i = 0;
+  $total = 0;
+  $page_total = 0;
+  $y_axis = 91;
+  $j = 0;
+  foreach($operations as $operation){
+    $product = $operation->getProduct();
+    
+    if($i == 0){
+      echo $header;
+    }
+    if($i % 13 == 0 && $i != 0 || $i == count($operations)-1){
+      if($i == count($operations)-1){
+        $page_total += $operation->q*$operation->price_out;
+      }
+      $iva = $page_total * 0.13;
+      echo "doc.text('$".number_format($page_total-$iva,2,".",",")."', 115, 166);";
+      echo "doc.text('$".number_format($iva,2,".",",")."', 115, 172);";
+      echo "doc.text('$".number_format($page_total,2,".",",")."', 115, 178);";
+      echo "doc.text('$".number_format($page_total,2,".",",")."', 115, 196);";
+      if($i % 13 == 0 && $i != count($operations)-1){
+        echo $page_break;
+        echo $header;
+        $page_total = 0;
+        $y_axis = 91;
+        $j = 0;
+      }
+    }
+
+    $page_total += $operation->q*$operation->price_out;
+    $row_pos = $y_axis+($j*5.6);
+    echo "doc.text('".$operation->q."', 10, $row_pos);";
+    echo "doc.text('".$product->name."', 20, $row_pos);";
+    echo "doc.text('$".number_format($operation->price_out,2,".",",")."', 80, $row_pos);";
+    echo "doc.text('$".number_format($operation->q*$operation->price_out,2,".",",")."', 115, $row_pos);";
+    
+
+    $i++;
+    $j++;
+  }
+
+  ?>
+  // Final, guardar el documento
+  doc.save('venta-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
+}
 </script>
 
 
