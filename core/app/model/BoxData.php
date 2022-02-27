@@ -17,7 +17,7 @@ class BoxData {
 
 	public function add(){
 		$sql = "insert into box (stock_id,created_at) ";
-		$sql .= "value ($this->stock_id,$this->created_at)";
+		$sql .= "values ($this->stock_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 

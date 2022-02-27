@@ -1480,7 +1480,7 @@
             return PclZip::errorCode();
           }
 
-          // ----- Get the value (and convert it in bytes)
+          // ----- Get the values (and convert it in bytes)
           $v_result_list[$p_options_list[$i]] = $v_value*1048576;
           $i++;
         break;

@@ -187,7 +187,7 @@ abstract class AbstractStyle
     /**
      * Set default for null and empty value
      *
-     * @param string $value (was: mixed)
+     * @param string $values (was: mixed)
      * @param string $default (was: mixed)
      * @return string (was: mixed)
      */

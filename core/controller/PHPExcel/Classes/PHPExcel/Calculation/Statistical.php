@@ -2984,7 +2984,7 @@ class PHPExcel_Calculation_Statistical {
 	 * STDEV
 	 *
 	 * Estimates standard deviation based on a sample. The standard deviation is a measure of how
-	 *		widely values are dispersed from the average value (the mean).
+	 *		widely values are dispersed from the average values (the mean).
 	 *
 	 * Excel Function:
 	 *		STDEV(value1[,value2[, ...]])

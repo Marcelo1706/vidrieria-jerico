@@ -16,7 +16,7 @@ class SpendData {
 
 	public function add(){
 		$sql = "insert into spend (name,price,created_at) ";
-		$sql .= "value (\"$this->name\",$this->price,$this->created_at)";
+		$sql .= "values (\"$this->name\",$this->price,$this->created_at)";
 		Executor::doit($sql);
 	}
 

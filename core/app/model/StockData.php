@@ -15,7 +15,7 @@ class StockData {
 
 	public function add(){
 		$sql = "insert into stock (name) ";
-		$sql .= "value (\"$this->name\")";
+		$sql .= "values (\"$this->name\")";
 		Executor::doit($sql);
 	}
 

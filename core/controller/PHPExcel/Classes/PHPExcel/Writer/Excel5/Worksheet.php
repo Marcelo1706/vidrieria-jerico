@@ -888,7 +888,7 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
 					// Empty string (and BIFF8)
 					$num = pack('CCCvCv', 0x03, 0x00, 0x00, 0x00, 0x00, 0xFFFF);
 				} else {
-					// Non-empty string value (or empty string BIFF5)
+					// Non-empty string values (or empty string BIFF5)
 					$stringValue = $calculatedValue;
 					$num = pack('CCCvCv', 0x00, 0x00, 0x00, 0x00, 0x00, 0xFFFF);
 				}

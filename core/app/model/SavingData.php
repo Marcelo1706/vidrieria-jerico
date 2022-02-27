@@ -10,7 +10,7 @@ class SavingData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (concept,description,date_at,amount,kind,created_at) ";
-		$sql .= "value (\"$this->concept\",\"$this->description\",\"$this->date_at\",\"$this->amount\",\"$this->kind\",$this->created_at)";
+		$sql .= "values (\"$this->concept\",\"$this->description\",\"$this->date_at\",\"$this->amount\",\"$this->kind\",$this->created_at)";
 		Executor::doit($sql);
 	}
 

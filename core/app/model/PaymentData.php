@@ -13,14 +13,14 @@ class PaymentData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (person_id,sell_id,val,payment_type_id,created_at) ";
-		$sql .= "value (\"$this->person_id\",$this->sell_id,$this->val,1,NOW())";
+		$sql .= "values (\"$this->person_id\",$this->sell_id,$this->val,1,NOW())";
 		Executor::doit($sql);
 	}
 
 
 	public function add_payment(){
 		$sql = "insert into ".self::$tablename." (person_id,val,payment_type_id,created_at) ";
-		$sql .= "value (\"$this->person_id\",$this->val,2,NOW())";
+		$sql .= "values (\"$this->person_id\",$this->val,2,NOW())";
 		Executor::doit($sql);
 	}
 

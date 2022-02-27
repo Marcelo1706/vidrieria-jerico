@@ -15,7 +15,7 @@ class CategoryData {
 
 	public function add(){
 		$sql = "insert into category (name,created_at) ";
-		$sql .= "value (\"$this->name\",$this->created_at)";
+		$sql .= "values (\"$this->name\",$this->created_at)";
 		Executor::doit($sql);
 	}
 

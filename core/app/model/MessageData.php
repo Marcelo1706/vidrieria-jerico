@@ -13,7 +13,7 @@ class MessageData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (code,message,user_from,user_to,created_at) ";
-		$sql .= "value (\"$this->code\",\"$this->message\",\"$this->user_from\",\"$this->user_to\",$this->created_at)";
+		$sql .= "values (\"$this->code\",\"$this->message\",\"$this->user_from\",\"$this->user_to\",$this->created_at)";
 		Executor::doit($sql);
 	}
 

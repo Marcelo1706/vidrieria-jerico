@@ -346,7 +346,7 @@ class PHPExcel_Shared_String
 	 * That's correct, control characters are stored directly in the shared-strings table.
 	 * We do encode characters that cannot be represented in XML using the following escape sequence:
 	 * _xHHHH_ where H represents a hexadecimal character in the character's value...
-	 * So you could end up with something like _x0008_ in a string (either in a cell value (<v>)
+	 * So you could end up with something like _x0008_ in a string (either in a cell values (<v>)
 	 * element or in the shared string <t> element.
 	 *
 	 * @param 	string	$value	Value to unescape
@@ -364,7 +364,7 @@ class PHPExcel_Shared_String
 	 * That's correct, control characters are stored directly in the shared-strings table.
 	 * We do encode characters that cannot be represented in XML using the following escape sequence:
 	 * _xHHHH_ where H represents a hexadecimal character in the character's value...
-	 * So you could end up with something like _x0008_ in a string (either in a cell value (<v>)
+	 * So you could end up with something like _x0008_ in a string (either in a cell values (<v>)
 	 * element or in the shared string <t> element.
 	 *
 	 * @param 	string	$value	Value to escape

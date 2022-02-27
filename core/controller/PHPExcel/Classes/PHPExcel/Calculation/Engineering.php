@@ -1718,7 +1718,7 @@ class PHPExcel_Calculation_Engineering {
 	/**
 	 * IMABS
 	 *
-	 * Returns the absolute value (modulus) of a complex number in x + yi or x + yj text format.
+	 * Returns the absolute values (modulus) of a complex number in x + yi or x + yj text format.
 	 *
 	 * Excel Function:
 	 *		IMABS(complexNumber)

@@ -8,7 +8,7 @@ class OperationTypeData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (name) ";
-		$sql .= "value (\"$this->name\")";
+		$sql .= "values (\"$this->name\")";
 		Executor::doit($sql);
 	}
 

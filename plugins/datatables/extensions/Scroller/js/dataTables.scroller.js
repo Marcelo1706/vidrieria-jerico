@@ -269,7 +269,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 * Please note that when the height of the full table exceeds 1 million
 	 * pixels, Scroller switches into a non-linear mode for the scrollbar to fit
 	 * all of the records into a finite area, but this function returns a linear
-	 * value (relative to the last non-linear positioning).
+	 * values (relative to the last non-linear positioning).
 	 *  @param {int} iPixels Offset from top to calculate the row number of
 	 *  @param {int} [intParse=true] If an integer value should be returned
 	 *  @param {int} [virtual=false] Perform the calculations in the virtual domain
@@ -850,7 +850,7 @@ Scroller.prototype = /** @lends Scroller.prototype */{
 	 * table that has been drawn so the user can scroll the whole data set.
 	 *
 	 * Note that if the calculated required scrolling height exceeds a maximum
-	 * value (1 million pixels - hard-coded) the forcing element will be set
+	 * values (1 million pixels - hard-coded) the forcing element will be set
 	 * only to that maximum value and virtual / physical domain transforms will
 	 * be used to allow Scroller to display tables of any number of records.
 	 *  @returns {void}

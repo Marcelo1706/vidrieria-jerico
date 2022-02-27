@@ -1861,7 +1861,7 @@ class PHPMailer
             $encodedCharPos = strpos($lastChunk, '=');
             if (false !== $encodedCharPos) {
                 // Found start of encoded character byte within $lookBack block.
-                // Check the encoded byte value (the 2 chars after the '=')
+                // Check the encoded byte values (the 2 chars after the '=')
                 $hex = substr($encodedText, $maxLength - $lookBack + $encodedCharPos + 1, 2);
                 $dec = hexdec($hex);
                 if ($dec < 128) {
@@ -3238,7 +3238,7 @@ class PHPMailer
     /**
      * Add a custom header.
      * $name value can be overloaded to contain
-     * both header name and value (name:value)
+     * both header name and values (name:value)
      * @access public
      * @param string $name Custom header name
      * @param string $value Header value

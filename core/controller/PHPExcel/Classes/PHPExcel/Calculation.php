@@ -2200,7 +2200,7 @@ class PHPExcel_Calculation {
 
 
 	/**
-	 * Calculate cell value (using formula from a cell ID)
+	 * Calculate cell values (using formula from a cell ID)
 	 * Retained for backward compatibility
 	 *
 	 * @access	public

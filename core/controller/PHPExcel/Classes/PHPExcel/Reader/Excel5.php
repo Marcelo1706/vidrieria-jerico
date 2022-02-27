@@ -2331,7 +2331,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 				switch ($extType) {
 					case 4:		// fill start color
 						$xclfType  = self::_GetInt2d($extData, 0); // color type
-						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
+						$xclrValue = substr($extData, 4, 4); // color values (value based on color type)
 
 						if ($xclfType == 2) {
 							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
@@ -2347,7 +2347,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
 					case 5:		// fill end color
 						$xclfType  = self::_GetInt2d($extData, 0); // color type
-						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
+						$xclrValue = substr($extData, 4, 4); // color values (value based on color type)
 
 						if ($xclfType == 2) {
 							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
@@ -2363,7 +2363,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
 					case 7:		// border color top
 						$xclfType  = self::_GetInt2d($extData, 0); // color type
-						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
+						$xclrValue = substr($extData, 4, 4); // color values (value based on color type)
 
 						if ($xclfType == 2) {
 							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
@@ -2379,7 +2379,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
 					case 8:		// border color bottom
 						$xclfType  = self::_GetInt2d($extData, 0); // color type
-						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
+						$xclrValue = substr($extData, 4, 4); // color values (value based on color type)
 
 						if ($xclfType == 2) {
 							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
@@ -2395,7 +2395,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
 					case 9:		// border color left
 						$xclfType  = self::_GetInt2d($extData, 0); // color type
-						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
+						$xclrValue = substr($extData, 4, 4); // color values (value based on color type)
 
 						if ($xclfType == 2) {
 							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
@@ -2411,7 +2411,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
 					case 10:		// border color right
 						$xclfType  = self::_GetInt2d($extData, 0); // color type
-						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
+						$xclrValue = substr($extData, 4, 4); // color values (value based on color type)
 
 						if ($xclfType == 2) {
 							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
@@ -2427,7 +2427,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
 					case 11:		// border color diagonal
 						$xclfType  = self::_GetInt2d($extData, 0); // color type
-						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
+						$xclrValue = substr($extData, 4, 4); // color values (value based on color type)
 
 						if ($xclfType == 2) {
 							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
@@ -2443,7 +2443,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 
 					case 13:	// font color
 						$xclfType  = self::_GetInt2d($extData, 0); // color type
-						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
+						$xclrValue = substr($extData, 4, 4); // color values (value based on color type)
 
 						if ($xclfType == 2) {
 							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
@@ -6498,7 +6498,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 	 * Extract RGB color
 	 * OpenOffice.org's Documentation of the Microsoft Excel File Format, section 2.5.4
 	 *
-	 * @param string $rgb Encoded RGB value (4 bytes)
+	 * @param string $rgb Encoded RGB values (4 bytes)
 	 * @return array
 	 */
 	private static function _readRGB($rgb)

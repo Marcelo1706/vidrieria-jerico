@@ -15,7 +15,7 @@ class UserData {
 
 	public function add(){
 		$sql = "insert into user (name,lastname,username,email,kind,stock_id,password,created_at) ";
-		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->username\",\"$this->email\",\"$this->kind\",$this->stock_id,\"$this->password\",$this->created_at)";
+		$sql .= "values (\"$this->name\",\"$this->lastname\",\"$this->username\",\"$this->email\",\"$this->kind\",$this->stock_id,\"$this->password\",$this->created_at)";
 		Executor::doit($sql);
 	}
 

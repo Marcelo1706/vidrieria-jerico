@@ -17,7 +17,7 @@ if(count($_POST)>0){
 
 	$user->add_client();
 
-print "<script>window.location='index.php?view=clients';</script>";
+# print "<script>window.location='index.php?view=clients';</script>";
 
 
 }

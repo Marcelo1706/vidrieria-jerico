@@ -635,7 +635,7 @@ class PHPExcel_Writer_Excel5 extends PHPExcel_Writer_Abstract implements PHPExce
 
 		// GKPIDDSI_DOCSPARTS
 		// MS-OSHARED p75 (2.3.3.2.2.1)
-		// Structure is VtVecUnalignedLpstrValue (2.3.3.1.9)
+		// Structure is VtVecUnalignedLpstrvalues (2.3.3.1.9)
 		// cElements
 		$dataProp = pack('v', 0x0001);
 		$dataProp .= pack('v', 0x0000);

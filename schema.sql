@@ -17,7 +17,7 @@ create table user(
 	created_at datetime not null
 );
 
-insert into user(name,lastname,email,password,status,kind,created_at) value ("Administrador", "","admin","90b9aa7e25f80cf4f64e990b78a9fc5ebd6cecad",1,1,NOW());
+insert into user(name,lastname,email,password,status,kind,created_at) values ("Administrador", "","admin","90b9aa7e25f80cf4f64e990b78a9fc5ebd6cecad",1,1,NOW());
 
 create table category(
 	id int not null auto_increment primary key,
@@ -100,12 +100,12 @@ create table operation_type(
 	name varchar(50) not null
 );
 
-insert into operation_type (name) value ("entrada");
-insert into operation_type (name) value ("salida");
-insert into operation_type (name) value ("entrada-pendiente");
-insert into operation_type (name) value ("salida-pendiente");
-insert into operation_type (name) value ("devolucion");
-insert into operation_type (name) value ("traspaso");
+insert into operation_type (name) values ("entrada");
+insert into operation_type (name) values ("salida");
+insert into operation_type (name) values ("entrada-pendiente");
+insert into operation_type (name) values ("salida-pendiente");
+insert into operation_type (name) values ("devolucion");
+insert into operation_type (name) values ("traspaso");
 
 create table box(
 	id int not null auto_increment primary key,

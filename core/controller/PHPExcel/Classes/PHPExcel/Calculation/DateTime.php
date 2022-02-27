@@ -716,9 +716,9 @@ class PHPExcel_Calculation_DateTime {
 	 *
 	 * @access	public
 	 * @category Date/Time Functions
-	 * @param	mixed		$startDate		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed		$startDate		Excel date serial values (float), PHP date timestamp (integer),
 	 *										PHP DateTime object, or a standard date string
-	 * @param	mixed		$endDate		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed		$endDate		Excel date serial values (float), PHP date timestamp (integer),
 	 *										PHP DateTime object, or a standard date string
 	 * @param	boolean		$method			US or European Method
 	 *										FALSE or omitted: U.S. (NASD) method. If the starting date is
@@ -776,9 +776,9 @@ class PHPExcel_Calculation_DateTime {
 	 *
 	 * @access	public
 	 * @category Date/Time Functions
-	 * @param	mixed	$startDate		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$startDate		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard date string
-	 * @param	mixed	$endDate		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$endDate		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard date string
 	 * @param	integer	$method			Method used for the calculation
 	 *										0 or omitted	US (NASD) 30/360
@@ -873,11 +873,11 @@ class PHPExcel_Calculation_DateTime {
 	 *
 	 * @access	public
 	 * @category Date/Time Functions
-	 * @param	mixed			$startDate		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed			$startDate		Excel date serial values (float), PHP date timestamp (integer),
 	 *											PHP DateTime object, or a standard date string
-	 * @param	mixed			$endDate		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed			$endDate		Excel date serial values (float), PHP date timestamp (integer),
 	 *											PHP DateTime object, or a standard date string
-	 * @param	mixed			$holidays,...	Optional series of Excel date serial value (float), PHP date
+	 * @param	mixed			$holidays,...	Optional series of Excel date serial values (float), PHP date
 	 *											timestamp (integer), PHP DateTime object, or a standard date
 	 *											strings that will be excluded from the working calendar, such
 	 *											as state and federal holidays and floating holidays.
@@ -953,12 +953,12 @@ class PHPExcel_Calculation_DateTime {
 	 *
 	 * @access	public
 	 * @category Date/Time Functions
-	 * @param	mixed		$startDate		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed		$startDate		Excel date serial values (float), PHP date timestamp (integer),
 	 *										PHP DateTime object, or a standard date string
 	 * @param	integer		$endDays		The number of nonweekend and nonholiday days before or after
 	 *										startDate. A positive value for days yields a future date; a
 	 *										negative value yields a past date.
-	 * @param	mixed		$holidays,...	Optional series of Excel date serial value (float), PHP date
+	 * @param	mixed		$holidays,...	Optional series of Excel date serial values (float), PHP date
 	 *										timestamp (integer), PHP DateTime object, or a standard date
 	 *										strings that will be excluded from the working calendar, such
 	 *										as state and federal holidays and floating holidays.
@@ -1064,7 +1064,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		DAY(dateValue)
 	 *
-	 * @param	mixed	$dateValue		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$dateValue		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard date string
 	 * @return	int		Day of the month
 	 */
@@ -1097,7 +1097,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		WEEKDAY(dateValue[,style])
 	 *
-	 * @param	mixed	$dateValue		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$dateValue		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard date string
 	 * @param	int		$style			A number that determines the type of return value
 	 *										1 or omitted	Numbers 1 (Sunday) through 7 (Saturday).
@@ -1166,7 +1166,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		WEEKNUM(dateValue[,style])
 	 *
-	 * @param	mixed	$dateValue		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$dateValue		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard date string
 	 * @param	boolean	$method			Week begins on Sunday or Monday
 	 *										1 or omitted	Week begins on Sunday.
@@ -1215,7 +1215,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		MONTH(dateValue)
 	 *
-	 * @param	mixed	$dateValue		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$dateValue		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard date string
 	 * @return	int		Month of the year
 	 */
@@ -1246,7 +1246,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		YEAR(dateValue)
 	 *
-	 * @param	mixed	$dateValue		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$dateValue		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard date string
 	 * @return	int		Year
 	 */
@@ -1277,7 +1277,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		HOUR(timeValue)
 	 *
-	 * @param	mixed	$timeValue		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$timeValue		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard time string
 	 * @return	int		Hour
 	 */
@@ -1317,7 +1317,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		MINUTE(timeValue)
 	 *
-	 * @param	mixed	$timeValue		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$timeValue		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard time string
 	 * @return	int		Minute
 	 */
@@ -1357,7 +1357,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		SECOND(timeValue)
 	 *
-	 * @param	mixed	$timeValue		Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$timeValue		Excel date serial values (float), PHP date timestamp (integer),
 	 *									PHP DateTime object, or a standard time string
 	 * @return	int		Second
 	 */
@@ -1399,7 +1399,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		EDATE(dateValue,adjustmentMonths)
 	 *
-	 * @param	mixed	$dateValue			Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$dateValue			Excel date serial values (float), PHP date timestamp (integer),
 	 *										PHP DateTime object, or a standard date string
 	 * @param	int		$adjustmentMonths	The number of months before or after start_date.
 	 *										A positive value for months yields a future date;
@@ -1444,7 +1444,7 @@ class PHPExcel_Calculation_DateTime {
 	 * Excel Function:
 	 *		EOMONTH(dateValue,adjustmentMonths)
 	 *
-	 * @param	mixed	$dateValue			Excel date serial value (float), PHP date timestamp (integer),
+	 * @param	mixed	$dateValue			Excel date serial values (float), PHP date timestamp (integer),
 	 *										PHP DateTime object, or a standard date string
 	 * @param	int		$adjustmentMonths	The number of months before or after start_date.
 	 *										A positive value for months yields a future date;

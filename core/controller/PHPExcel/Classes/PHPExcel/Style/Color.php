@@ -241,7 +241,7 @@ class PHPExcel_Style_Color extends PHPExcel_Style_Supervisor implements PHPExcel
 	 * Get a specified colour component of an RGB value
 	 *
 	 * @private
-	 * @param	string		$RGB		The colour as an RGB value (e.g. FF00CCCC or CCDDEE
+	 * @param	string		$RGB		The colour as an RGB values (e.g. FF00CCCC or CCDDEE
 	 * @param	int			$offset		Position within the RGB value to extract
 	 * @param	boolean		$hex		Flag indicating whether the component should be returned as a hex or a
 	 *									decimal value
@@ -257,7 +257,7 @@ class PHPExcel_Style_Color extends PHPExcel_Style_Supervisor implements PHPExcel
 	/**
 	 * Get the red colour component of an RGB value
 	 *
-	 * @param	string		$RGB		The colour as an RGB value (e.g. FF00CCCC or CCDDEE
+	 * @param	string		$RGB		The colour as an RGB values (e.g. FF00CCCC or CCDDEE
 	 * @param	boolean		$hex		Flag indicating whether the component should be returned as a hex or a
 	 *									decimal value
 	 * @return	string		The red colour component
@@ -269,7 +269,7 @@ class PHPExcel_Style_Color extends PHPExcel_Style_Supervisor implements PHPExcel
 	/**
 	 * Get the green colour component of an RGB value
 	 *
-	 * @param	string		$RGB		The colour as an RGB value (e.g. FF00CCCC or CCDDEE
+	 * @param	string		$RGB		The colour as an RGB values (e.g. FF00CCCC or CCDDEE
 	 * @param	boolean		$hex		Flag indicating whether the component should be returned as a hex or a
 	 *									decimal value
 	 * @return	string		The green colour component
@@ -281,7 +281,7 @@ class PHPExcel_Style_Color extends PHPExcel_Style_Supervisor implements PHPExcel
 	/**
 	 * Get the blue colour component of an RGB value
 	 *
-	 * @param	string		$RGB		The colour as an RGB value (e.g. FF00CCCC or CCDDEE
+	 * @param	string		$RGB		The colour as an RGB values (e.g. FF00CCCC or CCDDEE
 	 * @param	boolean		$hex		Flag indicating whether the component should be returned as a hex or a
 	 *									decimal value
 	 * @return	string		The blue colour component
@@ -293,9 +293,9 @@ class PHPExcel_Style_Color extends PHPExcel_Style_Supervisor implements PHPExcel
 	/**
 	 * Adjust the brightness of a color
 	 *
-	 * @param	string		$hex	The colour as an RGBA or RGB value (e.g. FF00CCCC or CCDDEE)
+	 * @param	string		$hex	The colour as an RGBA or RGB values (e.g. FF00CCCC or CCDDEE)
 	 * @param	float		$adjustPercentage	The percentage by which to adjust the colour as a float from -1 to 1
-	 * @return	string		The adjusted colour as an RGBA or RGB value (e.g. FF00CCCC or CCDDEE)
+	 * @return	string		The adjusted colour as an RGBA or RGB values (e.g. FF00CCCC or CCDDEE)
 	 */
 	public static function changeBrightness($hex, $adjustPercentage) {
 		$rgba = (strlen($hex) == 8);

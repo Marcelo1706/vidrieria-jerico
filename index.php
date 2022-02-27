@@ -5,7 +5,7 @@
 
 define("ROOT", dirname(__FILE__));
 
-$debug= false;
+$debug= true;
 if($debug){
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -17,7 +17,7 @@ ob_start();
 session_start();
 
 // si quieres que se muestre las consultas SQL debes decomentar la siguiente linea
-// Core::$debug_sql = true;
+#Core::$debug_sql = true;
 
 $lb = new Lb();
 $lb->start();

@@ -23,7 +23,7 @@ class PostData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (title,content,image,user_id,is_public,theme_id,created_at) ";
-		$sql .= "value (\"$this->title\",\"$this->content\",\"$this->image\",$this->user_id,$this->is_public,$this->theme_id, $this->created_at)";
+		$sql .= "values (\"$this->title\",\"$this->content\",\"$this->image\",$this->user_id,$this->is_public,$this->theme_id, $this->created_at)";
 		return Executor::doit($sql);
 	}
 

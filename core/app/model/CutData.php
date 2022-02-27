@@ -10,7 +10,7 @@ class CutData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (created_at) ";
-		$sql .= "value ($this->created_at)";
+		$sql .= "values ($this->created_at)";
 		return Executor::doit($sql);
 	}
 

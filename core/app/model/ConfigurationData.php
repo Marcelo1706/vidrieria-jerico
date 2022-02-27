@@ -14,7 +14,7 @@ class ConfigurationData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (name,short_name,is_active) ";
-		$sql .= "value (\"$this->name\",\"$this->short_name\",$this->is_active)";
+		$sql .= "values (\"$this->name\",\"$this->short_name\",$this->is_active)";
 		Executor::doit($sql);
 	}
 

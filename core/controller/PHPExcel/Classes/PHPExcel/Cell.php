@@ -310,7 +310,7 @@ class PHPExcel_Cell
 	}
 
 	/**
-	 *	Set old calculated value (cached)
+	 *	Set old calculated values (cached)
 	 *
 	 *	@param	mixed $pValue	Value
 	 *	@return	PHPExcel_Cell
@@ -325,7 +325,7 @@ class PHPExcel_Cell
 	}
 
 	/**
-	 *	Get old calculated value (cached)
+	 *	Get old calculated values (cached)
 	 *	This returns the value last calculated by MS Excel or whichever spreadsheet program was used to
 	 *		create the original spreadsheet file.
 	 *	Note that this value is not guaranteed to refelect the actual calculated value because it is

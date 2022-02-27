@@ -14,50 +14,50 @@ class SellData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (person_id,stock_to_id,iva,p_id,d_id,total,discount,user_id,created_at) ";
-		$sql .= "value ($this->person_id,$this->stock_to_id,$this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->user_id,$this->created_at)";
+		$sql .= "values ($this->person_id,$this->stock_to_id,$this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->user_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 	public function add_traspase(){
 		$sql = "insert into ".self::$tablename." (operation_type_id,iva,p_id,d_id,total,discount,user_id,created_at) ";
-		echo $sql .= "value (6,$this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->user_id,$this->created_at)";
+		echo $sql .= "values (6,$this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->user_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
 
 	public function add_cotization(){
 		$sql = "insert into ".self::$tablename." (is_draft,p_id,d_id,user_id,created_at) ";
-		$sql .= "value (1,2,2,$this->user_id,$this->created_at)";
+		$sql .= "values (1,2,2,$this->user_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
 	public function add_cotization_by_client(){
 		$sql = "insert into ".self::$tablename." (is_draft,p_id,d_id,person_id,created_at) ";
-		echo $sql .= "value (1,2,2,$this->person_id,$this->created_at)";
+		echo $sql .= "values (1,2,2,$this->person_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
 	public function add_de(){
 		$sql = "insert into ".self::$tablename." (user_id,operation_type_id,created_at) ";
-		$sql .= "value ($this->user_id,1,$this->created_at)";
+		$sql .= "values ($this->user_id,1,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
 
 	public function add_re(){
 		$sql = "insert into ".self::$tablename." (person_id,stock_to_id,total,p_id,d_id,user_id,operation_type_id,created_at) ";
-		$sql .= "value ($this->person_id,$this->stock_to_id,$this->total,$this->p_id,$this->d_id,$this->user_id,1,$this->created_at)";
+		$sql .= "values ($this->person_id,$this->stock_to_id,$this->total,$this->p_id,$this->d_id,$this->user_id,1,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
 
 public function add_with_client(){	
 		$sql = "insert into ".self::$tablename." (iva,p_id,d_id,total,discount,person_id,user_id,created_at) ";
-		$sql .= "value ($this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->person_id,$this->user_id,$this->created_at)";
+		$sql .= "values ($this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->person_id,$this->user_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 	public function add_re_with_client(){
 		$sql = "insert into ".self::$tablename." (p_id,d_id,person_id,operation_type_id,user_id,created_at) ";
-		$sql .= "value ($this->p_id,$this->d_id,$this->person_id,1,$this->user_id,$this->created_at)";
+		$sql .= "values ($this->p_id,$this->d_id,$this->person_id,1,$this->user_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
