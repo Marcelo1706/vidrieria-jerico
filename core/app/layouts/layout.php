@@ -152,7 +152,7 @@ $msgs = MessageData::getUnreadedByUserId($_SESSION["user_id"]);
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION DEL SISTEMA</li>
             <?php if(isset($_SESSION["user_id"])):?>
-                        <li><a href="./index.php?view=home"><i class='fa fa-dashboard'></i> <span>Dashboard</span></a></li>
+                        <li><a href="./index.php?view=home"><i class='fa fa-dashboard'></i> <span>Inicio</span></a></li>
 <?php if(Core::$user->kind==1||Core::$user->kind==2):?>
                         <li><a href="./index.php?view=alerts"><i class='fa fa-bell-o'></i> <span>Alertas</span></a></li>
 <?php endif; ?>
@@ -234,7 +234,7 @@ $msgs = MessageData::getUnreadedByUserId($_SESSION["user_id"]);
                 <li><a href="./?view=sellreports">Ventas</a></li>
                 <li><a href="./?view=resreport">Compras</a></li>
                 <li><a href="./?view=paymentreport">Reporte de pagos</a></li>
-                <li><a href="./?view=popularproductsreport">Productos Populares</a></li>
+                <!-- <li><a href="./?view=popularproductsreport">Productos Populares</a></li> -->
               </ul>
             </li>
 

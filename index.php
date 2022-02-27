@@ -5,7 +5,7 @@
 
 define("ROOT", dirname(__FILE__));
 
-$debug= true;
+$debug= false;
 if($debug){
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);

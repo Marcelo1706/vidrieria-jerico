@@ -4,8 +4,8 @@ class ProductData {
 
 	public function ProductData(){
 		$this->name = "";
-		$this->price_in = "";
-		$this->price_out = "";
+		$this->price_in = 0;
+		$this->price_out = 0;
 		$this->unit = "";
 		$this->user_id = "";
 		$this->presentation = "0";
@@ -15,13 +15,15 @@ class ProductData {
 	public function getCategory(){ return CategoryData::getById($this->category_id);}
 
 	public function add(){
+		$this->inventary_min = $this->inventary_min == "" ? 10 : $this->inventary_min;
 		$sql = "insert into ".self::$tablename." (barcode,name,description,price_in,price_out,user_id,presentation,unit,category_id,inventary_min,created_at) ";
 		$sql .= "values (\"$this->barcode\",\"$this->name\",\"$this->description\",\"$this->price_in\",\"$this->price_out\",$this->user_id,\"$this->presentation\",\"$this->unit\",$this->category_id,$this->inventary_min,NOW())";
 		return Executor::doit($sql);
 	}
 	public function add_with_image(){
-		$sql = "insert into ".self::$tablename." (barcode,image,name,description,price_in,price_out,user_id,presentation,unit,category_id,inventary_min) ";
-		$sql .= "values (\"$this->barcode\",\"$this->image\",\"$this->name\",\"$this->description\",\"$this->price_in\",\"$this->price_out\",$this->user_id,\"$this->presentation\",\"$this->unit\",$this->category_id,$this->inventary_min)";
+		$this->inventary_min = $this->inventary_min == "" ? 10 : $this->inventary_min;
+		$sql = "insert into ".self::$tablename." (barcode,image,name,description,price_in,price_out,user_id,presentation,unit,category_id,inventary_min,created_at) ";
+		$sql .= "values (\"$this->barcode\",\"$this->image\",\"$this->name\",\"$this->description\",\"$this->price_in\",\"$this->price_out\",$this->user_id,\"$this->presentation\",\"$this->unit\",$this->category_id,$this->inventary_min,NOW())";
 		return Executor::doit($sql);
 	}
 
@@ -37,7 +39,7 @@ class ProductData {
 
 // partiendo de que ya tenemos creado un objecto ProductData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set barcode=\"$this->barcode\",name=\"$this->name\",price_in=\"$this->price_in\",price_out=\"$this->price_out\",unit=\"$this->unit\",presentation=\"$this->presentation\",category_id=$this->category_id,inventary_min=\"$this->inventary_min\",description=\"$this->description\",is_active=\"$this->is_active\" where id=$this->id";
+		$sql = "update ".self::$tablename." set barcode=\"$this->barcode\",name=\"$this->name\",price_in=\"$this->price_in\",price_out=\"$this->price_out\",unit=\"$this->unit\",presentation=\"$this->presentation\",category_id=$this->category_id,inventary_min=\"$this->inventary_min\",description=\"$this->description\" where id=$this->id";
 		Executor::doit($sql);
 	}
 

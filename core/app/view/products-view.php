@@ -52,7 +52,6 @@ if(count($products)>0){
 		<th>Precio Salida</th>
 		<th>Categoria</th>
 		<th>Minima</th>
-		<th>Activo</th>
 		<th></th>
 	</thead>
 	<?php foreach($products as $product):?>
@@ -68,7 +67,6 @@ if(count($products)>0){
 		<td>$ <?php echo number_format($product->price_out,2,'.',','); ?></td>
 		<td><?php if($product->category_id!=null){echo $product->getCategory()->name;}else{ echo "<center>----</center>"; }  ?></td>
 		<td><?php echo $product->inventary_min; ?></td>
-		<td><?php if($product->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>
 		
 
 		<td style="width:90px;">

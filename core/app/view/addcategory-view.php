@@ -1,9 +1,9 @@
 <?php
 
 if(count($_POST)>0){
-	$user = new CategoryData();
-	$user->name = $_POST["name"];
-	$user->add();
+	$category = new CategoryData();
+	$category->name = $_POST["name"];
+	$category->add();
 
 print "<script>window.location='index.php?view=categories';</script>";
 

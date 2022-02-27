@@ -90,13 +90,7 @@ if($product!=null):
   </div>
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label" >Esta activo</label>
     <div class="col-md-8">
-<div class="checkbox">
-    <label>
-      <input type="checkbox" name="is_active" <?php if($product->is_active){ echo "checked";}?>> 
-    </label>
-  </div>
     </div>
   </div>
 

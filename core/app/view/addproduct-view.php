@@ -12,9 +12,9 @@ if(count($_POST)>0){
   //$product->inventary_min = $_POST["inventary_min"];
   $category_id="NULL";
   if($_POST["category_id"]!=""){ $category_id=$_POST["category_id"];}
-  $inventary_min="\"\"";
-  if($_POST["inventary_min"]!=""){ $inventary_min=$_POST["inventary_min"];}
-
+  $_POST["inventary_min"] = ($_POST["inventary_min"] != "" ) ? $_POST["inventary_min"] : 10;
+  #var_dump($_POST);
+  
   $product->category_id=$category_id;
   $product->inventary_min=$inventary_min;
   $product->user_id = $_SESSION["user_id"];
@@ -26,6 +26,7 @@ if(count($_POST)>0){
       $image->Process("storage/products/");
       if($image->processed){
         $product->image = $image->file_dst_name;
+        var_dump($product);
         $prod = $product->add_with_image();
       }
     }else{

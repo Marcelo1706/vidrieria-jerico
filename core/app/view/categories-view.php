@@ -21,8 +21,8 @@
 <br>
 		<?php
 
-		$users = CategoryData::getAll();
-		if(count($users)>0){
+		$categories = CategoryData::getAll();
+		if(count($categories)>0){
 			// si hay usuarios
 			?>
 <div class="box">
@@ -34,18 +34,16 @@
 
 			<table class="table table-bordered datatable table-hover">
 			<thead>
-			<th></th>
 			<th>Nombre</th>
-			<th></th>
 			</thead>
 			<?php
-			foreach($users as $user){
+			foreach($categories as $category){
 				?>
 				<tr>
-				<td style="width:30px;"><a href="index.php?view=productbycategory&id=<?php echo $user->id;?>" class="btn btn-default btn-xs"><i class="fa fa-th-list"></i> Productos</a> 
+				<td style="width:30px;"><a href="index.php?view=productbycategory&id=<?php echo $category->id;?>" class="btn btn-default btn-xs"><i class="fa fa-th-list"></i> Productos</a> 
 				</td>
-				<td><?php echo $user->name." ".$user->lastname; ?></td>
-				<td style="width:130px;"><a href="index.php?view=editcategory&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delcategory&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
+				<td><?php echo $category->name; ?></td>
+				<td style="width:130px;"><a href="index.php?view=editcategory&id=<?php echo $category->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delcategory&id=<?php echo $category->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
 				</tr>
 				<?php
 

@@ -15,10 +15,6 @@ if(count($_POST)>0){
   $category_id="NULL";
   if($_POST["category_id"]!=""){ $category_id=$_POST["category_id"];}
 
-  $is_active=0;
-  if(isset($_POST["is_active"])){ $is_active=1;}
-
-  $product->is_active=$is_active;
   $product->category_id=$category_id;
 
 	$product->user_id = $_SESSION["user_id"];
