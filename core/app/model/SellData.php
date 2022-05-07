@@ -6,15 +6,21 @@ class SellData {
 		$this->created_at = "NOW()";
 	}
 
-	public function getPerson(){ return PersonData::getById($this->person_id);}
+	public function getPerson(){ 
+		if($this->person_id == ""){
+			return $this->client_name;
+		} else {
+			return PersonData::getById($this->person_id);
+		}
+	}
 	public function getUser(){ return UserData::getById($this->user_id);}
 	public function getP(){ return PData::getById($this->p_id);}
 	public function getD(){ return DData::getById($this->d_id);}
 	public function getStockTo(){ return StockData::getById($this->stock_to_id);}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (person_id,stock_to_id,iva,p_id,d_id,total,discount,user_id,created_at) ";
-		$sql .= "values ($this->person_id,$this->stock_to_id,$this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->user_id,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (person_id,client_name,stock_to_id,iva,p_id,d_id,total,discount,user_id,created_at) ";
+		$sql .= "values ($this->person_id,'$this->client_name',$this->stock_to_id,$this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->user_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 	public function add_traspase(){

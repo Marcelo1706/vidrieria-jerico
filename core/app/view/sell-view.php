@@ -240,6 +240,8 @@ $clients = PersonData::getClients();
     	<option value="<?php echo $client->id;?>"><?php echo $client->name." ".$client->lastname;?></option>
     <?php endforeach;?>
     	</select>
+      <br>
+      <input type="text" class="form-control" name="client_name" id="client_name" placeholder="Nombre del Cliente">
     </div>
   </div>
 <div class="col-md-3">

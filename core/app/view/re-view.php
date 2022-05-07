@@ -174,13 +174,7 @@ $clients = DData::getAll();
     </div>
 
   </div>
-
-<div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Efectivo</label>
-    <div class="col-lg-10">
-      <input type="text" name="money" required class="form-control" id="money" placeholder="Efectivo">
-    </div>
-  </div>
+  <input type="hidden" name="money" required class="form-control" id="money" value="<?php echo $total; ?>">
   <div class="row">
 <div class="col-md-6 col-md-offset-6">
 <div class="box box-primary">

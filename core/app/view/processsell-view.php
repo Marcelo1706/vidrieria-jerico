@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set("America/Mexico_City");
+date_default_timezone_set("America/El_Salvador");
 if(isset($_SESSION["cart"])){
 	$cart = $_SESSION["cart"];
 	if(count($cart)>0){
@@ -63,6 +63,7 @@ $_SESSION["errors"] = $errors;
 			$sell->discount = $_POST["discount"];
 			$sell->stock_to_id = StockData::getPrincipal()->id;
 			$sell->person_id=$_POST["client_id"]!=""?$_POST["client_id"]:"NULL";
+			$sell->client_name = $_POST["client_name"] != "" ? $_POST["client_name"] : "NULL";
 
 			$s = $sell->add();
 
@@ -113,9 +114,10 @@ if($_POST["client_id"]!=""){
 	$person = PersonData::getById($_POST["client_id"]);
 	$person_th="<td>Cliente</td>";
 	$person_td="<td>".$person->name." ".$person->lastname."</td>";
+}else if($_POST["client_name"]!=""){
+	$person_th="<td>Cliente</td>";
+	$person_td="<td>".$_POST["client_name"]."</td>";
 }
-
-
 		$message .= "<table border='1'><tr>
 		<td>Id</td>
 		$person_th

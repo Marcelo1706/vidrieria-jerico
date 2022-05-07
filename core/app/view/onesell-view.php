@@ -36,11 +36,14 @@ if(isset($_COOKIE["selled"])){
 <div class="box box-primary">
 <table class="table table-bordered">
 <?php if($sell->person_id!=""):
-$client = $sell->getPerson();
+    $client = $sell->getPerson();
+    $nombre_cliente = $client->name." ".$client->lastname;
+  elseif($sell->client_name!=""):
+    $nombre_cliente = $sell->client_name;
 ?>
 <tr>
   <td style="width:150px;">Cliente</td>
-  <td><?php echo $client->name." ".$client->lastname;?></td>
+  <td><?php echo $nombre_cliente; ?></td>
 </tr>
 
 <?php endif; ?>
@@ -171,7 +174,12 @@ $person = $sell->getPerson();
       "clave": "Cliente",
       "valor": "<?php echo $person->name." ".$person->lastname; ?>",
       },
-      <?php endif; ?>
+<?php elseif($sell->client_name != ""): ?>
+    {
+      "clave": "Cliente",
+      "valor": "<?php echo $sell->client_name; ?>",
+      },
+<?php endif; ?>
     {
       "clave": "Atendido por",
       "valor": "<?php echo $user->name." ".$user->lastname; ?>",
@@ -286,6 +294,8 @@ function create_pdf(){
     doc.text('".$person->no."', 45, 66);
     doc.text('".$person->address1."', 30, 72);
     ";
+  } else if ($sell->client_name!=""){
+    $header .= "doc.text('".$sell->client_name."', 45, 60);";
   }
   $header .= "
     doc.text('".$user->name." ".$user->lastname."', 45, 77);

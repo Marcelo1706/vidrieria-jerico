@@ -38,19 +38,26 @@ if(count($products)>0){
 	<thead>
 		<th>Codigo</th>
 		<th>Nombre</th>
+    <th>Precio de Venta</th>
 		<th>Por Recibir</th>
 		<th>Disponible</th>
 		<th>Por Entregar</th>
 		<th></th>
 	</thead>
-	<?php foreach($products as $product):
-	$r=OperationData::getRByStock($product->id,$_GET["stock"]);
+	<?php 
+  $total_price_in = 0;
+  $total_price_out = 0;
+  foreach($products as $product):
+    $r=OperationData::getRByStock($product->id,$_GET["stock"]);
 	$q=OperationData::getQByStock($product->id,$_GET["stock"]);
 	$d=OperationData::getDByStock($product->id,$_GET["stock"]);
+  $total_price_in += $product->price_in*$q;
+  $total_price_out += $product->price_out*$q;
 	?>
 	<tr class="<?php if($q<=$product->inventary_min/2){ echo "danger";}else if($q<=$product->inventary_min){ echo "warning";}?>">
 		<td><?php echo $product->id; ?></td>
 		<td><?php echo $product->name; ?></td>
+    <td>$ <?php echo  number_format($product->price_out, 2)?></td>
 		<td>
 			<?php echo $r; ?>
 		</td>
@@ -69,6 +76,8 @@ if(count($products)>0){
 </table>
   </div><!-- /.box-body -->
 </div><!-- /.box -->
+<h3 class="box-title">Total en Inventario (Precio de Entrada): $ <?php echo(number_format($total_price_in, 2))?></h3>
+<h3 class="box-title">Total en Inventario (Precio de Venta): $ <?php echo(number_format($total_price_out, 2))?></h3>
 
 
 
